@@ -1,0 +1,20 @@
+body{padding:0;margin:0;font-weight:normal;text-align:center;background-color:transparent;}
+#main{width:179px;}
+.header{float:left;width:179px;height:42px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='http://swidget.blogrush.com/img/top.png');}
+.header[class]{float:left;width:179px;height:42px;background:url('http://swidget.blogrush.com/img/top.png') left top no-repeat;}
+#content{float:left;width:179px;display:table;}
+.spot{width:179px;}
+.spl{float:left;width:8px;height:45px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='http://swidget.blogrush.com/img/spl.png');}
+.spl[class]{float:left;width:8px;height:45px;background:url('http://swidget.blogrush.com/img/spl.png') left top no-repeat;}
+.spr{float:left;width:8px;height:45px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='http://swidget.blogrush.com/img/spr.png');}
+.spr[class]{float:left;width:8px;height:45px;background:url('http://swidget.blogrush.com/img/spr.png') left top no-repeat;}
+.sp1{float:left;width:163px;height:45px;background:url('http://swidget.blogrush.com/img/spgm.png') left top no-repeat;}
+.sp2{float:left;width:163px;height:45px;background:url('http://swidget.blogrush.com/img/spwm.png') left top no-repeat;}
+.c11{float:left;width:150px;height:14px;padding-left:6px;text-align:justify;white-space:nowrap;}
+.c13{float:left;width:150px;height:13px;padding-left:6px;text-align:justify;white-space:nowrap;padding-top:6px;padding-bottom:7px;}
+.c12{float:left;width:150px;height:13px;text-align:right;padding-left:6px;padding-top:4px;}
+.c11a{padding-top:2px;font-size:12px;font-family:Arial;color:#005BAB;text-align:left;float:left;font-weight:bold;line-height:1em;letter-spacing:0px;text-decoration:underline;}
+.c12p{margin:0;font-size:10px;font-family:verdana;font-weight: bold;color:#484848;line-height:1em;letter-spacing:-1px;text-decoration:none;}
+#blog{width:179px;height:25;}
+#footer{float:left;width:179px;height:23px;text-align:left;}
+.f1{float:left;}
