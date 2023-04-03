@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>IT Advance</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+<!--[if lt ie 7]>	
+<link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" />
+<![endif]-->
+<style type="text/css">
+.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}
+</style>
+</head>
+<body>
+<div id="wrapper2">
+  <div id="header">
+    <h1><a href="placeholder.html">Suoritusrekisteri</a></h1>
+    <div class="slogan">Projektityö</div>
+    <div class="icons"><img src="images/icons.gif" alt="" usemap="#Map" border="0" height="15" width="64" />
+      <map name="Map" id="Map">
+        <area shape="rect" coords="3,-1,22,18" href="placeholder.html" />
+        <area shape="rect" coords="24,0,44,16" href="placeholder.html" />
+        <area shape="rect" coords="46,-1,68,18" href="placeholder.html" />
+      </map>
+    </div>
+  </div>
+  <div id="navigation">
+    <ul>
+      <li class="page_item"><a href="oppilaat.html">Oppillaat</a></li>
+      <li class="page_item page-item-2"><a href="kokeet.html">Kokeet</a></li>
+      <li class="page_item page-item-14"><a href="kurssit.html">Kurssit</a></li>
+    </ul>	
+  </div>
+  <div id="wrapper">
+    <div id="content-wrapper">
+      <div id="content">
+	  <span class="arvosanaotsikko">Oppillaan Arvosanat</span>
+      <div class="muokkaaminen">
+      <form>
+      </br>   <label for="matematiikan_arvosana">Matematiikan Arvosana:</label>
+        <input type="number" id="matematiikan_arvosana" name="matematiikan_arvosana" min="4" max="10" maxlength="2" required>
+        </br> <label for="fysiikan_arvosana"> &nbsp Fysiikan Arvosana:</label>
+        <input type="number" id="fysiikan_arvosana" name="fysiikan_arvosana" min="4" max="10" maxlength="2" required>
+    </br>    <label for="kemian_arvosana"> &nbsp Kemian Arvosana:</label>
+        <input type="number" id="kemian_arvosana" name="kemian_arvosana" min="4" max="10" maxlength="2" required>
+        <input type="submit" value="Tallenna Arvosanat">
+      </form>
+      <div class="result">
+        <h2>Keskiarvo: <span id="oppilaan_arvosana"></span></h2>
+      </div>      </div>
+
+
+    </div>
+
+  </div>
+  <div id="footer">
+    <p> designed by: German Tishchenko</p>
+  </div>
+</div>
+    <script>
+      // Koodi joka laskee oppilaan keskiarvon
+      const matematiikan_arvosana = document.getElementById("matematiikan_arvosana");
+      const kemian_arvosana = document.getElementById("kemian_arvosana");
+      const fysiikan_arvosana = document.getElementById("fysiikan_arvosana");
+      const oppilaan_arvosana = document.getElementById("oppilaan_arvosana");
+      const form = document.querySelector("form");
+      
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        const kaikki_arvosanat = Number(matematiikan_arvosana.value) + Number(fysiikan_arvosana.value) + Number(kemian_arvosana.value);
+        const keskiarvo = kaikki_arvosanat / 3;
+        oppilaan_arvosana.innerText = keskiarvo.toFixed(1);
+      });
+
+    </script>
+</body>
+</html>

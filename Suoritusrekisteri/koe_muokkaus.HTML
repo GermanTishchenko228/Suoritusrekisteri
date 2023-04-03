@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>IT Advance</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style_edit.css" type="text/css" media="screen" />
+<link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+<!--[if lt ie 7]>	
+<link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" />
+<![endif]-->
+<style type="text/css">
+.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}
+</style>
+	<script>
+		function editGrade(cell) {
+			var currentGrade = cell.innerHTML;
+			cell.innerHTML = '<input type="number" min="4" max="10" value="' + currentGrade + '"> <button onclick="saveGrade(this.parentNode, \'' + currentGrade + '\')">Tallenna</button>';
+			cell.onclick = null;
+		}
+
+		function saveGrade(cell, previousGrade) {
+			var newGrade = cell.getElementsByTagName('input')[0].value;
+			cell.innerHTML = newGrade;
+			cell.onclick = function() {
+				editGrade(cell);
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="wrapper2">
+  <div id="header">
+    <h1><a href="placeholder.html">Suoritusrekisteri</a></h1>
+    <div class="slogan">Projektityö</div>
+    <div class="icons"><img src="images/icons.gif" alt="" usemap="#Map" border="0" height="15" width="64" />
+      <map name="Map" id="Map">
+        <area shape="rect" coords="3,-1,22,18" href="placeholder.html" />
+        <area shape="rect" coords="24,0,44,16" href="placeholder.html" />
+        <area shape="rect" coords="46,-1,68,18" href="placeholder.html" />
+      </map>
+    </div>
+  </div>
+  <div id="navigation">
+    <ul>
+      <li class="page_item"><a href="oppilaat.html">Oppillaat</a></li>
+      <li class="page_item page-item-2"><a href="kokeet.html">Kokeet</a></li>
+      <li class="page_item page-item-14"><a href="kurssit.html">Kurssit</a></li>
+    </ul>
+  </div>
+  <div id="wrapper">
+    <div id="content-wrapper">
+      <div id="content">
+	  <span class="oppilasotsikko">Koe Nimi</span>
+	  	    <div class="koeolaatikko">
+
+	<div class="oppilaslista">
+
+<table id="myTable">
+		<thead>
+			<tr>
+    <th onclick="sortTable(0)">Oppilas</th>
+    <th onclick="sortTable(1)">Arvosana</th>
+			</tr>
+			<tr>
+				<th>Antti Anttinen</td>
+				<th onclick="editGrade(this)">6</td>
+			</tr>
+			<tr>
+				<th>Bekka Beninen</td>
+				<th onclick="editGrade(this)">9</td>
+			</tr>
+			<tr>
+				<th>Cilli Cillinen</td>
+				<th onclick="editGrade(this)">9</td>
+			</tr>
+			<tr>
+				<th>Daniel Daninen</td>
+				<th onclick="editGrade(this)">4</td>
+			</tr>
+			<tr>
+				<th>Pekka Pekkanen</td>
+				<th onclick="editGrade(this)">5</td>
+			</tr>
+			<tr>
+				<th>Kerttu Kerttunen</td>
+				<th onclick="editGrade(this)">9</td>
+			</tr>
+			<tr>
+				<th>Leo Leonen</td>
+				<th onclick="editGrade(this)">6</td>
+			</tr>
+			<tr>
+				<th>Sini Sininen</td>
+				<th onclick="editGrade(this)">4</td>
+			</tr>
+			<tr>
+				<th>Sini Sininen</td>
+				<th onclick="editGrade(this)">6</td>
+			</tr>
+		</thead>
+</table>
+	
+	
+	    </div>
+
+    </div>
+
+    </div>
+
+  </div>
+  <div id="footer">
+    <p> designed by: German Tishchenko</p>
+  </div>
+</div>
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TH")[n];
+      y = rows[i + 1].getElementsByTagName("TH")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;      
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
+
+</body>
+</html>
