@@ -53,61 +53,34 @@
   </div>
   <div id="wrapper">
     <div id="content-wrapper">
+
       <div id="content">
-	  <span class="oppilasotsikko">Koe Nimi</span>
-	  	    <div class="koeolaatikko">
+	  <span class="uusioppilasotsikko">Uusi Oppilas</span>
+	      <div class="oppilaslisaaminen">
 
-	<div class="oppilaslista">
+	      <form>
 
-<table id="myTable">
-		<thead>
-			<tr>
-    <th onclick="sortTable(0)">Oppilas</th>
-    <th onclick="sortTable(1)">Arvosana</th>
-			</tr>
-			<tr>
-				<th>Antti Anttinen</td>
-				<th onclick="editGrade(this)">6</td>
-			</tr>
-			<tr>
-				<th>Bekka Beninen</td>
-				<th onclick="editGrade(this)">9</td>
-			</tr>
-			<tr>
-				<th>Cilli Cillinen</td>
-				<th onclick="editGrade(this)">9</td>
-			</tr>
-			<tr>
-				<th>Daniel Daninen</td>
-				<th onclick="editGrade(this)">4</td>
-			</tr>
-			<tr>
-				<th>Pekka Pekkanen</td>
-				<th onclick="editGrade(this)">5</td>
-			</tr>
-			<tr>
-				<th>Kerttu Kerttunen</td>
-				<th onclick="editGrade(this)">9</td>
-			</tr>
-			<tr>
-				<th>Leo Leonen</td>
-				<th onclick="editGrade(this)">6</td>
-			</tr>
-			<tr>
-				<th>Sini Sininen</td>
-				<th onclick="editGrade(this)">4</td>
-			</tr>
-			<tr>
-				<th>Sini Sininen</td>
-				<th onclick="editGrade(this)">6</td>
-			</tr>
-		</thead>
-</table>
-	
-	
-	    </div>
+	        <label for="testName">Oppilaan Nimi:</label>
+      <input type="text" id="testName" name="testName" placeholder="Kirjoita oppilaan nimi" required>
+      <label for="testSubject">Oppilaan Sukunimi:</label>
+      <input type="text" id="testSubject" name="testSubject" placeholder="Kirjoita oppilaan sukunimi" required>
+      <label for="testSubject">Fysiikan Arvosana:</label>
+	  	        <div class="takana">
+        <input type="number" id="fysiikan_arvosana" name="fysiikan_arvosana" min="4" max="10" maxlength="2" required>    </div>
+      <label for="testSubject">Matematiikan Arvosana:</label>
+	  	        <div class="takana">
+        <input type="number" id="matematiikan_arvosana" name="matematiikan_arvosana" min="4" max="10" maxlength="2" required>    </div>
+      <label for="testSubject">Kemian Arvosana:</label>
+	  	        <div class="takana">	
+        <input type="number" id="kemian_arvosana" name="kemian_arvosana" min="4" max="10" maxlength="2" required>    </div>
+	  	        <div class="edessa">
+        <input type="submit" value="Lisää Oppilas">
+  </div>
 
-    </div>
+	      </form>
+  </div>
+
+	 
 
     </div>
 

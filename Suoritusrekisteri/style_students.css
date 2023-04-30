@@ -56,7 +56,9 @@ font-weight: normal;
 border-bottom-width: 0;
 }
 
-
+ul[account] {   margin-top: 0px;  margin-left: 0px; padding-left: 547px;
+	width: 223px;
+}
 
 pre, blockquote 
 {
@@ -78,10 +80,19 @@ pre { padding-top: 10px; padding-bottom: 10px; }
 
 code { color: #779900; font-family: Consolas, Verdana, "Courier New", Sans-Serif; }
 
-ul, ol { line-height: 2.0em; }
+ul, ol { line-height: 2.0em; 
+padding-right: 400px;
+vertical-align: top;
+  word-wrap: break-word;
+	margin-left: 450px;
+    display:inline-block;
 
-ul { list-style-image: url(images/bullet.gif); }
+}
+ul {   float: left; margin-top: -37px;  margin-left: 0px; padding-left: 0px;
+  word-wrap: break-word;
+    display: block;
 
+}
 abbr, acronym { font-style: normal; border-bottom: 1px dotted #333333; cursor: help; }
 
 del { text-decoration: line-through; color: #999999; }
@@ -221,20 +232,28 @@ font-size: 20px;
 
 /* Navigation */
 
-#navigation ul { list-style-type: none; list-style-image: none; float: left; margin-top: 0px; margin-left: 0px; padding-left: 0px;}
+ul {   float: left; margin-top: -37px;  margin-left: 0px; padding-left: 0px;
+  word-wrap: break-word;
+    display: block;
 
-#navigation li { float: left; }
+}
+ul[account] {   margin-top: 0px;  margin-left: 0px; padding-left: 547px;
+	width: 223px;
+}
+li { float: right; }
 
-#navigation li a:link,
-#navigation li a:visited
+ li a:link,
+ li a:visited
 {
 	float: left;
 	color: #91b7d9;
-	display: block;
 	padding: 0px 10px;
 	margin-right: 1px;
 	height: 23px;
-	font-size: 13px;
+  word-wrap: break-word;
+    display: block;
+
+	font-size: 14px;
 	margin-top: 0px;
 	background-color: #464b57;
 	background-image: url(images/nav-bg.gif);
@@ -243,12 +262,11 @@ font-size: 20px;
 	
 }
 
-#navigation li a:hover,
-#navigation li a:active
+ li a:hover,
+ li a:active
 {
 	color: #a1d2ff;
 	background-repeat: repeat-x;
-	font-size: 13px;
 	margin-top: 0px;
 	background-color: #464b57;
 	background-image: url(images/nav-bg2.gif);
@@ -256,12 +274,21 @@ font-size: 20px;
 	border-right: 1px solid #202a33;
 }
 
-#navigation li.active a
+ li.active a
 {
 	color: #bec9cd;
 	background-color: #3c464e;
 }
+.account 
+{ 
 
+	float: right;
+	margin-bottom: -53px; 
+
+	width: 100px;
+	height: 212px;
+
+}
 /* Wrapper */
 
 #wrapper a:link { font-weight: bold; }
@@ -308,6 +335,7 @@ width: 276px;
 }
 .koelaatikko {
 padding-top: 35px;
+	margin-left: -20px; 
 
 	color: #bec9cd;
 padding-bottom: 205px;
