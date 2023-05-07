@@ -3,7 +3,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <title>IT Advance</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style_edit.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="style_addtest.css" type="text/css" media="screen" />
 <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
 <!--[if lt ie 7]>	
 <link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" />
@@ -12,11 +12,6 @@
 .recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}
 </style>
 	<script>
-		function editGrade(cell) {
-			var currentGrade = cell.innerHTML;
-			cell.innerHTML = '<input type="number" min="4" max="10" value="' + currentGrade + '"> <button onclick="saveGrade(this.parentNode, \'' + currentGrade + '\')">Tallenna</button>';
-			cell.onclick = null;
-		}
 
 		function saveGrade(cell, previousGrade) {
 			var newGrade = cell.getElementsByTagName('input')[0].value;
@@ -57,14 +52,24 @@
 	  <span class="oppilasotsikko">Uusi Koe</span>
 
 	      <div class="koelisaaminen">
-	      <form>
+		  
+	      <div class="koenimet">
 
-	        <label for="testName">Koe Nimi:</label>
-      <input type="text" id="testName" name="testName" placeholder="Anna kokeen nimi" required>
-      <label for="testSubject">Koe Aine:</label>
-      <input type="text" id="testSubject" name="testSubject" placeholder="Anna kokeen aine" required>
+<form action="lisaa_koe.php" method="post">
 
-	      </form>
+	        <label for="testName">Kokeen Nimi:</label>
+      <input type="text" id="koeNimi" name="testName" placeholder="Anna kokeen nimi" required>
+ <label for="testSubject">Kokeen Aine:</label>
+	
+<div class="custom-select" style="width:200px; height:45px; ">
+  <select name="koeAine">
+  <option value="matematiikka">Matematiikka</option>
+  <option value="fysiikka">Fysiikka</option>
+  <option value="kemia">Kemia</option>
+  </select>
+</div>
+
+  </div>
 
 	  
 	  
@@ -72,51 +77,43 @@
 
 
 <table id="myTable">
+
 		<thead>
 			<tr>
     <th onclick="sortTable(0)">Oppilas</th>
     <th onclick="sortTable(1)">Arvosana</th>
 			</tr>
 			<tr>
-				<th>Antti Anttinen</td>
-				<th onclick="editGrade(this)">6</td>
+				<th>Bekka Beninen</td>
+			<th> 
+	        <input type="number" min="4" max="10" maxlength="2"  value="' + currentGrade + '"></td>
 			</tr>
 			<tr>
 				<th>Bekka Beninen</td>
-				<th onclick="editGrade(this)">9</td>
+			<th> 
+	        <input type="number" min="4" max="10" maxlength="2"  value="' + currentGrade + '"></td>
 			</tr>
 			<tr>
-				<th>Cilli Cillinen</td>
-				<th onclick="editGrade(this)">9</td>
+				<th>Bekka Beninen</td>
+			<th> 
+	        <input type="number" min="4" max="10" maxlength="2"  value="' + currentGrade + '"></td>
 			</tr>
 			<tr>
-				<th>Daniel Daninen</td>
-				<th onclick="editGrade(this)">4</td>
+				<th>Bekka Beninen</td>
+			<th> 
+	        <input type="number" min="4" max="10" maxlength="2"  value="' + currentGrade + '"></td>
 			</tr>
 			<tr>
-				<th>Pekka Pekkanen</td>
-				<th onclick="editGrade(this)">5</td>
-			</tr>
-			<tr>
-				<th>Kerttu Kerttunen</td>
-				<th onclick="editGrade(this)">9</td>
-			</tr>
-			<tr>
-				<th>Leo Leonen</td>
-				<th onclick="editGrade(this)">6</td>
-			</tr>
-			<tr>
-				<th>Sini Sininen</td>
-				<th onclick="editGrade(this)">4</td>
-			</tr>
-			<tr>
-				<th>Sini Sininen</td>
-				<th onclick="editGrade(this)">6</td>
+				<th>ABekka Beninen</td>
+			<th> 
+	        <input type="number" min="4" max="10" maxlength="2"  value="' + currentGrade + '"></td>
 			</tr>
 		</thead>
 </table>
-	
-	
+		  	    <div class="lisaakoe">
+	        <input type="submit" value="Lisää Koe">
+    </div>
+	      </form>
 
     </div>
 
@@ -183,6 +180,91 @@ function sortTable(n) {
     }
   }
 }
+
+
+/*KOODI AINEIDEN VALITSEMIS VALIKOLLE":*/
+/*CODE FOR SUBJECT MENU":*/
+
+
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 0; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+
 </script>
 
 

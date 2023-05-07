@@ -55,26 +55,26 @@
     <div id="content-wrapper">
 
       <div id="content">
-	  <span class="uusioppilasotsikko">Uusi Oppilas</span>
+	  <span class="muokkaaoppilasotsikko">Muokkaa Oppilas</span>
 	      <div class="oppilaslisaaminen">
 
-<form action="lisaa_oppilas.php" method="post">
+	      <form>
 
-	        <label for="nimi">Oppilaan Nimi:</label>
-      <input type="text" id="nimi" name="nimi" placeholder="Kirjoita oppilaan nimi" required>
-      <label for="sukunimi">Oppilaan Sukunimi:</label>
-      <input type="text" id="sukunimi" name="sukunimi" placeholder="Kirjoita oppilaan sukunimi" required>
-      <label for="fysiikan_arvosana">Fysiikan Arvosana:</label>
+	        <label for="testName">Oppilaan Nimi:</label>
+      <input type="text" id="testName" name="testName" placeholder="Muokkaa oppilaan nimi" required>
+      <label for="testSubject">Oppilaan Sukunimi:</label>
+      <input type="text" id="testSubject" name="testSubject" placeholder="Muokkaa oppilaan sukunimi" required>
+      <label for="testSubject">Fysiikan Arvosana:</label>
 	  	        <div class="takana">
         <input type="number" id="fysiikan_arvosana" name="fysiikan_arvosana" min="4" max="10" maxlength="2" required>    </div>
-      <label for="matematiikan_arvosana">Matematiikan Arvosana:</label>
+      <label for="testSubject">Matematiikan Arvosana:</label>
 	  	        <div class="takana">
         <input type="number" id="matematiikan_arvosana" name="matematiikan_arvosana" min="4" max="10" maxlength="2" required>    </div>
-      <label for="kemian_arvosana">Kemian Arvosana:</label>
+      <label for="testSubject">Kemian Arvosana:</label>
 	  	        <div class="takana">	
         <input type="number" id="kemian_arvosana" name="kemian_arvosana" min="4" max="10" maxlength="2" required>    </div>
 	  	        <div class="edessa">
-        <input type="submit" value="Lisää Oppilas">
+        <input type="submit" value="Muokkaa Oppilas">
   </div>
 
 	      </form>

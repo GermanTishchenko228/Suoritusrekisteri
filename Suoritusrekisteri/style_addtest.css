@@ -565,8 +565,6 @@ display: inline
 text-shadow: -3px -12px 6px rgba(165,184,199,0), -2px 1px 20px rgba(165,184,199,0.54);
 
 }
-
-
 .uusioppilasotsikko {
 	height: 54px;
 font-size: 6.4em;
@@ -580,21 +578,6 @@ display: inline
 text-shadow: -3px -12px 6px rgba(165,184,199,0), -2px 1px 20px rgba(165,184,199,0.54);
     margin-bottom: 365px;
 
-
-}
-.muokkaaoppilasotsikko {
-	height: 54px;
-font-size: 6.4em;
-  white-space: nowrap;
-display: inline
-	width: 54px;
-	text-align: center;
-	float: center;
-	padding: 63px 60px 30px 30px;
-text-shadow: -3px -12px 6px rgba(165,184,199,0), -2px 1px 20px rgba(165,184,199,0.54);
-    margin-bottom: 365px;
-
-	margin-left: 38px;
 
 }
 .arvosanaotsikko {
@@ -686,7 +669,6 @@ margin-left: 111px;
 	background: linear-gradient(155deg,  #1e2530, #3c414d);
 	text-align: center;
 	color: #bec9cd;
-margin-left: 91px;
 	width: 50px;
 	font: 1.5em arial;
 	    border: 1px solid #8f9fa6;
@@ -757,7 +739,7 @@ margin-left: 51px;
       input[type="number"]::-webkit-inner-spin-button {
         -webkit-appearance: none;
       }
-form{
+.koenimet{
 width: 300px;
   line-height: 3.75;
 	font: 2.3em arial;
@@ -766,7 +748,19 @@ margin-left: 91px;
     margin-bottom: -25px;
 
 }    
+.muokkausotsikko {
+	height: 54px;
+font-size: 6.4em;
+  white-space: nowrap;
+display: inline
+	width: 54px;
+	text-align: center;
+	float: center;
+	margin-left: 85px;
+	padding: 23px 30px 30px 30px;
+text-shadow: -3px -12px 6px rgba(165,184,199,0), -2px 1px 20px rgba(165,184,199,0.54);
 
+}
 
 label{
 display: flex;
@@ -810,4 +804,113 @@ margin-left: -71px;
 	width: 620px;
 	font: 0.9em arial;
 	    border: 1px solid #8f9fa6;
+height: 45px;
+
       }
+
+      select {
+	background: linear-gradient(155deg,  #1e2530, #3c414d);
+	color: #bec9cd;
+margin-left: -71px;
+    margin-bottom: 25px;
+	width: 620px;
+	font: 0.9em arial;
+	    border: 1px solid #8f9fa6;
+      }
+	  
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  margin-left: -71px;
+    margin-bottom: 25px;
+	width: 620px;
+	font: 0.9em arial;
+	color: #bec9cd;
+    padding-bottom: -35px;
+
+	padding-right: 421px;
+	background: linear-gradient(155deg,  #1e2530, #3c414d);
+height:17px;
+	    border: 1px solid #8f9fa6;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+	width: 620px;
+	color: #bec9cd;
+	    padding-bottom: -35px;
+
+height:47px;
+}
+
+.select-selected {
+	background: linear-gradient(155deg,  #1e2530, #3c414d);
+	width: 587px;
+	color: #bec9cd;
+height:10px;
+
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+      padding-bottom: -35px;
+
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+	color: #bec9cd;
+    padding-bottom: -35px;
+
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+	color: #bec9cd;
+    padding-bottom: -35px;
+
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+	width: 620px;
+	font: 0.9em arial;
+	    border: 1px solid #8f9fa6;
+  position: absolute;
+  background-color: #1e2530;
+  top: 100%;
+  left: 0;
+  right: 0;
+  	color: #bec9cd;
+    margin-top: 4px;
+height: 135px;
+
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+      padding-bottom: -35px;
+height:27px;
+}
